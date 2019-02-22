@@ -1,0 +1,99 @@
+<html>
+  <link rel="stylesheet" type="text/css" href="stylesheet/style.css">
+
+     <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+  <head>
+  <body>
+
+<div class="row">
+  <div class="column">
+    <button onclick="openModal();currentSlide(1)" class="hover-shadow">
+  </div>
+  <div class="column">
+    <button onclick="openModal();currentSlide(2)" class="hover-shadow">
+  </div>
+  <div class="column">
+    <button onclick="openModal();currentSlide(3)" class="hover-shadow">
+  </div>
+  <div class="column">
+    <button onclick="openModal();currentSlide(4)" class="hover-shadow">
+  </div>
+
+
+<!-- The Modal/Lightbox -->
+<div id="myModal" class="modal">
+  <span class="close cursor" onclick="closeModal()">&times;</span>
+  <div class="modal-content">
+
+    <div class="mySlides">
+      <div class="numbertext">1 / 4</div>
+       <div id="seasons" style="width: 900px; height: 500px;">
+       </div>
+     </div>
+
+    <div class="mySlides">
+      <div class="numbertext">2 / 4</div>
+      <div id="birthdays" style="height: 550px; width: 800px"></div>
+
+    </div>
+
+    <div class="mySlides">
+    <div id="barchart_height" style="width: 900px; height: 500px;"></div>
+ 
+    </div>
+
+    <div class="mySlides">
+      <div class="numbertext">4 / 4</div>
+      <img src="" style="width:100%">
+    </div>
+
+    <!-- Next/previous controls -->
+    <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+    <a class="next" onclick="plusSlides(1)">&#10095;</a>
+
+    <!-- Caption text -->
+    <div class="caption-container">
+      <p id="caption"></p>
+    </div>
+
+    <!-- Thumbnail image controls -->
+    <div class="column">
+       <button><h3 class="demo"  onclick="currentSlide(1)">Seasons</h3></button>
+    </div>
+
+    <div class="column">
+      <button><h3 class="demo" onclick="currentSlide(2)">birthdays!</h3></button>
+    </div>
+
+    <div class="column">
+     <button><h3 class="demo" onclick="currentSlide(3)">Graph</h3></button>
+    </div>
+
+    <div class="column">
+     <button><h3 class="demo" onclick="currentSlide(4)" >Data</h3></button>
+    </div>
+  </div>
+</div>
+<!-- 
+    <div id="piechart" style="width: 900px; height: 500px;"></div>
+      
+      <div id="top_x_div" style="width: 900px; height: 500px;"></div>
+ -->
+      
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+      <script type="text/javascript" src="js/script.js"></script>
+     </body>
+</html>
