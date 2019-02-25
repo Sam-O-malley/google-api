@@ -5,6 +5,12 @@
 
 body{
   overflow:hidden;
+  background: black;
+}
+
+#title{
+  color:orange;
+ text-align: center;
 }
 
 
@@ -18,9 +24,26 @@ body{
 
 }
 
+.row{
+  margin-top: 45%;
+  padding-left: 15%
+}
+
 .column {
   float: left;
   width: 25%;
+}
+
+.column_graphButton{
+float: left;
+  width: 25%;
+  padding-left:5%;
+
+}
+
+button{
+  height: 50px;
+  width:50px;
 }
 
 .row_thumbNails {
@@ -64,18 +87,26 @@ margin-left:40%;
   border:solid 3px pink;
 }
 
-#piechart{
+#seasons{
   width: 900px; 
   height: 500px;
-  margin:auto;
+  margin-left:20%;
+  margin-top:10%;
 }
 
+#birthdays{
+    width: 900px; 
+  height: 500px;
+  margin-left:17%;
+  margin-top:10%;
+}
 
-
-
-
-
-
+#barchart_height{
+    width: 900px; 
+  height: 500px;
+   margin-left:20%;
+  margin-top:10%;
+}
 
 
 /* The Close Button */
@@ -145,7 +176,11 @@ margin-left:40%;
 img {
   margin-bottom: -4px;
 }
-
+.title_graph{
+  height:70px;
+  width:200px;
+  margin-top:3%;
+}
 .caption-container {
   text-align: center;
   /*background-color: black;*/

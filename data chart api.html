@@ -1,23 +1,30 @@
 <html>
   <link rel="stylesheet" type="text/css" href="stylesheet/style.css">
 
+ 
+
      <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+
   <head>
   <body>
 
+<h1 id="title">Class of 18WDWU07</h1>
+
+
 <div class="row">
-  <div class="column">
-    <button onclick="openModal();currentSlide(1)" class="hover-shadow">
+  <div class="column opening_buttons">
+    <button onclick="openModal();currentSlide(1)" class="hover-shadow"></button>
   </div>
-  <div class="column">
-    <button onclick="openModal();currentSlide(2)" class="hover-shadow">
+  <div class="column opening_buttons">
+    <button onclick="openModal();currentSlide(2)" class="hover-shadow"></button>
   </div>
-  <div class="column">
-    <button onclick="openModal();currentSlide(3)" class="hover-shadow">
+  <div class="column opening_buttons">
+    <button onclick="openModal();currentSlide(3)" class="hover-shadow"></button>
   </div>
-  <div class="column">
-    <button onclick="openModal();currentSlide(4)" class="hover-shadow">
+  <div class="column opening_buttons">
+    <button onclick="openModal();currentSlide(4)" class="hover-shadow"></button>
   </div>
+</div>
 
 
 <!-- The Modal/Lightbox -->
@@ -57,29 +64,24 @@
     </div>
 
     <!-- Thumbnail image controls -->
-    <div class="column">
-       <button><h3 class="demo"  onclick="currentSlide(1)">Seasons</h3></button>
+    <div class="column_graphButton">
+       <button class="title_graph"><h3 class="demo"  onclick="currentSlide(1)">Seasons</h3></button>
     </div>
 
-    <div class="column">
-      <button><h3 class="demo" onclick="currentSlide(2)">birthdays!</h3></button>
+    <div class="column_graphButton">
+      <button class="title_graph"><h3 class="demo" onclick="currentSlide(2)">birthdays!</h3></button>
     </div>
 
-    <div class="column">
-     <button><h3 class="demo" onclick="currentSlide(3)">Graph</h3></button>
+    <div class="column_graphButton">
+     <button class="title_graph"><h3 class="demo" onclick="currentSlide(3)">Graph</h3></button>
     </div>
 
-    <div class="column">
-     <button><h3 class="demo" onclick="currentSlide(4)" >Data</h3></button>
+    <div class="column_graphButton">
+     <button class="title_graph"><h3 class="demo" onclick="currentSlide(4)" >Data</h3></button>
     </div>
   </div>
 </div>
-<!-- 
-    <div id="piechart" style="width: 900px; height: 500px;"></div>
-      
-      <div id="top_x_div" style="width: 900px; height: 500px;"></div>
- -->
-      
+  
 
 
 
@@ -90,10 +92,7 @@
 
 
 
-
-
-
-
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
       <script type="text/javascript" src="js/script.js"></script>
      </body>
 </html>

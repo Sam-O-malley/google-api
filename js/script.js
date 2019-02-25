@@ -1,8 +1,23 @@
-   
+function myFunction() {
+  var x = document.getElementsByClassName("opening_buttons");
+  if (x.style.display === "none") {
+    x.style.display = "block";
+  } else {
+    x.style.display = "none";
+  }
+}
+
+$(document).ready(function(){
+  $("opening_buttons").click(function(){
+    $("button").toggle();
+  });
+});
+
 
 // Open the Modal
 function openModal() {
   document.getElementById('myModal').style.display = "block";
+
 }
 
 // Close the Modal
@@ -42,6 +57,11 @@ function showSlides(n) {
   captionText.innerHTML = dots[slideIndex-1].alt;
 }
 
+
+
+
+
+
 //charts start
 
 google.charts.load('current', {'packages':['corechart']});
@@ -60,7 +80,9 @@ google.charts.load('current', {'packages':['corechart']});
         ]);
 
         var options1 = {
-          title: 'My Daily Activities'
+          title: 'My Daily Activities',
+          width:800,
+          height:500
         };
        
        var chart = new google.visualization.PieChart(document.getElementById('seasons'));
@@ -89,7 +111,8 @@ google.charts.load('current', {'packages':['corechart']});
         var options2 = {
           hAxis: {minValue: 0, maxValue: 12},
           vAxis: {minValue: 0, maxValue: 30},
-          chartArea: {width:'50%'},
+          width:800,
+          height:500,
           trendlines: {
             0: {
               type: 'linear',
@@ -130,7 +153,7 @@ google.charts.load('current', {'packages':['corechart']});
 
       var options3 = {
         title: "Height of class",
-        width: 600,
+        width: 800,
         height: 400,
         bar: {groupWidth: "95%"},
         legend: { position: "none" },
@@ -140,98 +163,6 @@ google.charts.load('current', {'packages':['corechart']});
       
       chart.draw(data3, options3);
   }
-
-
-
-//       google.charts.load('current', {'packages':['corechart','']});
-      
-//       google.charts.setOnLoadCallback(drawChart);
-
-//       function drawChart() {
-
-
-//       var data1 = google.visualization.arrayToDataTable([
-//           ['Seasons'],
-//           ['Summer',6],
-//           ['Autumn',1],
-//           ['Winter',  1],
-//           ['Spring', 2],
-          
-//         ]);
-//         var options1 = {
-//           title: 'My Daily Activities'
-//         };
-
-//         var data2 = google.visualization.arrayToDataTable([
-//           ['month', 'date'],
-//           [ 12,  1],
-//           [ 9,   1],
-//           [ 12,   2],
-//           [ 25,   9],
-//           [ 12,    2],
-//           [ 25,    9],
-//           [ 2,    2],
-//           [ 5,    11],
-//           [ 9,    4],
-//           [ 25,    6],
-//           [ 7,    12],
-//           [ 22,    11],
-
-//         ]);
-
-//           var options2 = {
-//           hAxis: {minValue: 0, maxValue: 12},
-//           vAxis: {minValue: 0, maxValue: 30},
-//           chartArea: {width:'50%'},
-//           trendlines: {
-//             0: {
-//               type: 'linear',
-//               showR2: true,
-//               visibleInLegend: true
-//             }
-//           }
-//         };
-      
-//       var data3 = google.visualization.arrayToDataTable([
-//         ["Height", "Density", { role: "style" } ],
-//         ["student one", 185.42, "#b87333"],
-//         ["student two", 177, "silver"],
-//         ["student three", 173, "gold"],
-//         ["student four", 170.18, "color: #e5e4e2"],
-//         ["student five", 161, "color: #e5e4e2"],
-//         ["student six", 168, "gold"],
-//         ["student sevene", 181, "color: #e5e4e2"],
-//         ["student eight", 171, "color: #e5e4e2"],
-//         ["student nine", 173, "color: #e5e4e2"],
-//         ["student ten", 153, "color: #e5e4e2"]
-
-//       ]);
-      
-//       var options3 = {
-//         title: "Height of class",
-//         width: 600,
-//         height: 400,
-//         bar: {groupWidth: "95%"},
-//         legend: { position: "none" },
-//       };
-
-      
-//       var chart = new google.visualization.PieChart(document.getElementById('seasons'));
-//        chart.draw(data1, options1);
-
-//         var chartLinear = new google.visualization.ScatterChart(document.getElementById('birthdays'));
-        
-//         chartLinear.draw(data2, options2);
-
-
-//       var chart = new google.visualization.BarChart(document.getElementById("barchart_height"));
-      
-//       chart.draw(view, options3);
-
-
-
-
-// }
 
 
 
