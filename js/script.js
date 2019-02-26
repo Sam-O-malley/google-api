@@ -1,15 +1,14 @@
-function myFunction() {
-  var x = document.getElementsByClassName("opening_buttons");
-  if (x.style.display === "none") {
-    x.style.display = "block";
-  } else {
-    x.style.display = "none";
-  }
-}
+
 
 $(document).ready(function(){
-  $("opening_buttons").click(function(){
-    $("button").toggle();
+  $(".opening_buttons").click(function(){
+    $(".row").hide();
+  });
+});
+
+$(document).ready(function(){
+  $("#close").click(function(){
+    $(".row").show();
   });
 });
 
@@ -17,7 +16,6 @@ $(document).ready(function(){
 // Open the Modal
 function openModal() {
   document.getElementById('myModal').style.display = "block";
-
 }
 
 // Close the Modal
@@ -80,7 +78,7 @@ google.charts.load('current', {'packages':['corechart']});
         ]);
 
         var options1 = {
-          title: 'My Daily Activities',
+          title: 'Favourite Seasons',
           width:800,
           height:500
         };
@@ -154,7 +152,7 @@ google.charts.load('current', {'packages':['corechart']});
       var options3 = {
         title: "Height of class",
         width: 800,
-        height: 400,
+        height: 500,
         bar: {groupWidth: "95%"},
         legend: { position: "none" },
       };
@@ -164,6 +162,37 @@ google.charts.load('current', {'packages':['corechart']});
       chart.draw(data3, options3);
   }
 
-
+var options = {
+  hAxis: {
+    titleTextStyle: {color: '#607d8b'}, 
+    gridlines: { count:0}, 
+    textStyle: { color: '#b0bec5', fontName: 'Roboto', fontSize: '12', bold: true}
+  },
+  vAxis: {
+    minValue: 0, 
+    gridlines: {color:'#37474f', count:4}, 
+    baselineColor: 'transparent'
+  },
+  legend: {position: 'top', alignment: 'center', textStyle: {color:'#607d8b', fontName: 'Roboto', fontSize: '12'} },
+  colors: ["#3f51b5","#2196f3","#03a9f4","#00bcd4","#009688","#4caf50","#8bc34a","#cddc39"],
+  areaOpacity: 0.24,
+  lineWidth: 1,
+  backgroundColor: 'transparent',
+  chartArea: {
+    backgroundColor: "transparent",
+    width: '100%',
+    height: '80%'
+  },
+      height:200, // example height, to make the demo charts equal size
+      width:400,
+      pieSliceBorderColor: '#263238',
+      pieSliceTextStyle:  {color:'#607d8b' },
+      pieHole: 0.9,
+      bar: {groupWidth: "40" },
+      colorAxis: {colors: ["#3f51b5","#2196f3","#03a9f4","#00bcd4"] },
+      backgroundColor: 'transparent',
+      datalessRegionColor: '#37474f',
+      displayMode: 'regions'
+    };
 
 

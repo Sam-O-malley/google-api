@@ -1,14 +1,18 @@
 <html>
+<head>
   <link rel="stylesheet" type="text/css" href="stylesheet/style.css">
 
  
 
      <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
-
-  <head>
+    <link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet">
+</head>
   <body>
 
 <h1 id="title">Class of 18WDWU07</h1>
+
+
+<p> Learning about the coding class </p>
 
 
 <div class="row">
@@ -27,25 +31,26 @@
 </div>
 
 
+
 <!-- The Modal/Lightbox -->
 <div id="myModal" class="modal">
-  <span class="close cursor" onclick="closeModal()">&times;</span>
+  <span class="close cursor"  id="close" onclick="closeModal()">&times;</span>
   <div class="modal-content">
 
     <div class="mySlides">
       <div class="numbertext">1 / 4</div>
-       <div id="seasons" style="width: 900px; height: 500px;">
+       <div id="seasons">
        </div>
      </div>
 
     <div class="mySlides">
       <div class="numbertext">2 / 4</div>
-      <div id="birthdays" style="height: 550px; width: 800px"></div>
+      <div id="birthdays" ></div>
 
     </div>
 
     <div class="mySlides">
-    <div id="barchart_height" style="width: 900px; height: 500px;"></div>
+    <div id="barchart_height"></div>
  
     </div>
 
@@ -65,19 +70,19 @@
 
     <!-- Thumbnail image controls -->
     <div class="column_graphButton">
-       <button class="title_graph"><h3 class="demo"  onclick="currentSlide(1)">Seasons</h3></button>
+       <button class="title_graph" onclick="currentSlide(1)"><h3 class="demo"  onclick="currentSlide(1)">Seasons</h3></button>
     </div>
 
     <div class="column_graphButton">
-      <button class="title_graph"><h3 class="demo" onclick="currentSlide(2)">birthdays!</h3></button>
+      <button class="title_graph" onclick="currentSlide(2)"><h3 class="demo" >birthdays!</h3></button>
     </div>
 
     <div class="column_graphButton">
-     <button class="title_graph"><h3 class="demo" onclick="currentSlide(3)">Graph</h3></button>
+     <button class="title_graph" onclick="currentSlide(3)"><h3 class="demo" >Graph</h3></button>
     </div>
 
     <div class="column_graphButton">
-     <button class="title_graph"><h3 class="demo" onclick="currentSlide(4)" >Data</h3></button>
+     <button class="title_graph" onclick="currentSlide(4)"><h3 class="demo" onclick="currentSlide(4)" >Data</h3></button>
     </div>
   </div>
 </div>

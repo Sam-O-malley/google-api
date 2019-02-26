@@ -6,14 +6,26 @@
 body{
   overflow:hidden;
   background: black;
+  font-family: 'Raleway', sans-serif;
+
 }
+
+
+h1{
+padding-top:10%;
+}
+
 
 #title{
   color:orange;
  text-align: center;
 }
 
-
+/*#declearation{
+  text-align: center;
+  border:solid 1px;
+}
+*/
 .row_thumbNails > .column {
   padding: 0 8px;
 }
@@ -25,9 +37,15 @@ body{
 }
 
 .row{
-  margin-top: 45%;
-  padding-left: 15%
-}
+  margin:auto;
+  margin-top: 30%;
+  padding-left: 10%;
+  padding-top: 2%;
+  border:solid 1px orange;
+  height:100px;
+  width:70%;
+  
+ }
 
 .column {
   float: left;
@@ -97,7 +115,7 @@ margin-left:40%;
 #birthdays{
     width: 900px; 
   height: 500px;
-  margin-left:17%;
+  margin-left:20%;
   margin-top:10%;
 }
 
