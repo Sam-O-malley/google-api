@@ -16,6 +16,9 @@ $(document).ready(function(){
 // Open the Modal
 function openModal() {
   document.getElementById('myModal').style.display = "block";
+    //   document.getElementById('seasons').style.opacity = '1';
+    // document.getElementById('birthdays').style.opacity = '0.1';
+
 }
 
 // Close the Modal
@@ -80,7 +83,8 @@ google.charts.load('current', {'packages':['corechart']});
         var options1 = {
           title: 'Favourite Seasons',
           width:800,
-          height:500
+          height:500,
+              // backgroundColor: 'transparent'
         };
        
        var chart = new google.visualization.PieChart(document.getElementById('seasons'));
@@ -115,7 +119,8 @@ google.charts.load('current', {'packages':['corechart']});
             0: {
               type: 'linear',
               showR2: true,
-              visibleInLegend: true
+              visibleInLegend: true,
+                  // backgroundColor: 'transparent'
             }
           }
         };
@@ -154,6 +159,7 @@ google.charts.load('current', {'packages':['corechart']});
         width: 800,
         height: 500,
         bar: {groupWidth: "95%"},
+            // backgroundColor: 'transparent',
         legend: { position: "none" },
       };
       
@@ -166,7 +172,8 @@ var options = {
   hAxis: {
     titleTextStyle: {color: '#607d8b'}, 
     gridlines: { count:0}, 
-    textStyle: { color: '#b0bec5', fontName: 'Roboto', fontSize: '12', bold: true}
+    textStyle: { color: '#b0bec5', fontName: 'Roboto', fontSize: '12', bold: true},
+     backgroundColor: 'white'
   },
   vAxis: {
     minValue: 0, 
@@ -179,7 +186,7 @@ var options = {
   lineWidth: 1,
   backgroundColor: 'transparent',
   chartArea: {
-    backgroundColor: "transparent",
+    backgroundColor: "white",
     width: '100%',
     height: '80%'
   },
@@ -190,9 +197,41 @@ var options = {
       pieHole: 0.9,
       bar: {groupWidth: "40" },
       colorAxis: {colors: ["#3f51b5","#2196f3","#03a9f4","#00bcd4"] },
-      backgroundColor: 'transparent',
+      backgroundColor: 'white',
       datalessRegionColor: '#37474f',
-      displayMode: 'regions'
+      displayMode: 'regions',
+         
     };
 
+   google.charts.load('current', {
+        'packages':['geochart'],
+        // Note: you will need to get a mapsApiKey for your project.
+        // See: https://developers.google.com/chart/interactive/docs/basic_load_libs#load-settings
+        'mapsApiKey': 'AIzaSyDbtmUbSFhQM5Y7gwLeP7GPtglT5l4yVYo'
+      });
+      google.charts.setOnLoadCallback(drawRegionsMap);
 
+      function drawRegionsMap() {
+        var data = google.visualization.arrayToDataTable([
+          ['Country', 'vists'],
+          ['Germany', 200],
+          ['United States', 300],
+          ['Brazil', 400],
+          ['Canada', 500],
+          ['France', 600],
+          ['RU', 700]
+        ]);
+
+        var options = {  
+          width: 800,
+          height: 500,
+          backgroundColor: 'red',
+          backgroundColor: {
+            fill: 'blue'
+          }
+        };
+
+        var chart = new google.visualization.GeoChart(document.getElementById('geo-regions'));
+
+        chart.draw(data, options);
+      }
