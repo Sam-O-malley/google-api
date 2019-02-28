@@ -44,7 +44,13 @@ function showSlides(n) {
   var i;
   var slides = document.getElementsByClassName("mySlides");
   var dots = document.getElementsByClassName("demo");
+
   var captionText = document.getElementById("caption");
+  
+const fade = (() => { star.style.opacity = 0; });
+
+const unfade = (() => { star.style.opacity = 1; });
+
   if (n > slides.length) {slideIndex = 1}
   if (n < 1) {slideIndex = slides.length}
   for (i = 0; i < slides.length; i++) {
@@ -60,9 +66,6 @@ function showSlides(n) {
 
 
 
-
-
-
 //charts start
 
 google.charts.load('current', {'packages':['corechart']});
@@ -73,7 +76,7 @@ google.charts.load('current', {'packages':['corechart']});
       
       var data1 = google.visualization.arrayToDataTable([
           ['Seasons', 'Count'],
-          ['Summer',6],
+          ['Summer',6,],
           ['Autumn',1],
           ['Winter',  1],
           ['Spring', 2],
@@ -84,6 +87,8 @@ google.charts.load('current', {'packages':['corechart']});
           title: 'Favourite Seasons',
           width:800,
           height:500,
+                    slices: {0: {color: '#F8EF3D'}, 1:{color: '#F59E28'}, 2:{color: '#3084A5'}, 3: {color: '#82D518'}, 4:{color: 'grey'}},
+                     is3D: true
               // backgroundColor: 'transparent'
         };
        
@@ -95,37 +100,30 @@ google.charts.load('current', {'packages':['corechart']});
     
         var data2 = google.visualization.arrayToDataTable([
           ['date', 'month'],
-          [ 12,  1],
-          [ 9,   1],
-          [ 12,   2],
-          [ 25,   9],
-          [ 12,    2],
-          [ 25,    9],
+        [ 1,  12],
+          [ 1,   9],
+          [ 2,   12],
+          [ 9,   25],
           [ 2,    2],
-          [ 5,    11],
-          [ 9,    4],
-          [ 25,    6],
-          [ 7,    12],
-     
-
+          [ 11,    5],
+          [ 4,    9],
+          [ 6,    25],
+          [ 12,    7],
+          [ 11,    22]
         ]);
 
         var options2 = {
-          hAxis: {minValue: 0, maxValue: 12},
-          vAxis: {minValue: 0, maxValue: 30},
+           title: 'BDAY!',
+          hAxis: {title:'month', minValue: 0, maxValue: 12},
+          vAxis: {title:'date', minValue: 0, maxValue: 31},
+
           width:800,
           height:500,
-          trendlines: {
-            0: {
-              type: 'linear',
-              showR2: true,
-              visibleInLegend: true,
-                  // backgroundColor: 'transparent'
-            }
-          }
+  
         };
 
-        var chartLinear = new google.visualization.ScatterChart(document.getElementById('birthdays'));
+        
+         var chartLinear = new google.visualization.ScatterChart(document.getElementById('birthdays'));
         
         chartLinear.draw(data2, options2);
 
@@ -147,18 +145,13 @@ $.ajax({
          [dataFromJSON[1].studentName,dataFromJSON[1].height],
           [dataFromJSON[2].studentName,dataFromJSON[2].height],
            [dataFromJSON[3].studentName,dataFromJSON[3].height]
-
-
-      //   ["student one", 185.42, "#b87333"],
-      //   ["student two", 177, "silver"],
-      //   ["student three", 173, "gold"],
-      //   ["student four", 170.18, "color: #e5e4e2"],
-      //   ["student five", 161, "color: #e5e4e2"],
-      //   ["student six", 168, "gold"],
-      //   ["student sevene", 181, "color: #e5e4e2"],
-      //   ["student eight", 171, "color: #e5e4e2"],
-      //   ["student nine", 173, "color: #e5e4e2"],
-      //   ["student ten", 153, "color: #e5e4e2"]
+            [dataFromJSON[4].studentName,dataFromJSON[4].height],
+         [dataFromJSON[5].studentName,dataFromJSON[5].height],
+          [dataFromJSON[6].studentName,dataFromJSON[6].height],
+           [dataFromJSON[7].studentName,dataFromJSON[7].height] 
+         [dataFromJSON[8].studentName,dataFromJSON[8].height],
+          [dataFromJSON[9].studentName,dataFromJSON[9].height],
+          
 
        ]);
 
@@ -227,22 +220,22 @@ var options = {
 var studVisit= [
 {
 
-"country" : "Germany",
-"visits"  : 5
+"country" : "Japan",
+"visits"  : 3
 
 },
 
 {
 
-"country" : "United States",
-"visits"  : 2
+"country" : "South Africa",
+"visits"  : 3
 
 },
 
 {
 
 "country" : "Brazil",
-"visits"  : 3
+"visits"  : 1
 
 },
 
@@ -251,10 +244,216 @@ var studVisit= [
 "country" : "France",
 "visits"  : 3
 
+},
+
+{
+
+"country" : "China",
+"visits"  : 3
+
+},
+
+{
+
+"country" : "Romania",
+"visits"  : 1
+
+},
+
+
+{
+
+"country" : "Netherlands",
+"visits"  : 3
+
+},
+
+{
+
+"country" : "Poland",
+"visits"  : 1
+
+},
+
+{
+
+"country" : "Italy",
+"visits"  : 3
+
+},
+
+
+{
+
+"country" : "South korea",
+"visits"  : 1
+
+},
+
+{
+
+"country" : "Sweden",
+"visits"  : 1
+
+},
+
+{
+
+"country" : "Norway",
+"visits"  : 3
+
+},
+
+ {
+
+ "country" : "Denmark",
+ "visits"  : 3
+
+ },
+
+{
+
+"country" : "Hungary",
+"visits"  : 1
+
+},
+
+
+{
+
+"country" : "Greece",
+"visits"  : 1
+
+},
+
+{
+
+"country" : "Spain",
+"visits"  : 2
+
+},
+
+ {
+
+ "country" : "Italy",
+ "visits"  : 2
+
+ },
+
+{
+
+"country" : "England",
+"visits"  : 5
+
+},
+
+{
+
+"country" : "Vietnam",
+"visits"  : 1
+
+},
+
+{
+
+"country" : "Taiwan",
+"visits"  : 1
+
+},
+
+{
+
+"country" : "Malaysia",
+"visits"  : 1
+
+},
+
+{
+
+"country" : "Thailand",
+"visits"  : 1
+
+},
+
+
+ {
+
+ "country" : "Switzerland",
+ "visits"  : 1
+
+},
+{
+
+"country" : "Czech Republic",
+"visits"  : 1
+
+},
+
+{
+
+"country" : "Monaco",
+"visits"  : 1
+
+},
+
+{
+
+"country" : "Slovenia",
+"visits"  : 1
+
+},
+
+
+{
+
+"country" : "United Arab Emirates",
+"visits"  : 2
+
+},
+
+{
+
+"country" : "Peru",
+"visits"  : 2
+
+},
+
+{
+
+"country" : "Australia",
+"visits"  : 7
+
+},
+
+{
+
+"country" : "Slovenia",
+"visits"  : 1
+
+},
+
+{
+
+"country" : "Turkey",
+"visits"  : 1
+
+},
+{
+
+"country" : "Austria",
+"visits"  : 1
+
+},
+{
+
+"country" : "New Zealand",
+"visits"  : 10
+
 }
 
 ]
 
+//31 countries visited
 
 
 
@@ -272,17 +471,48 @@ var studVisit= [
           [studVisit[0].country, studVisit[0].visits],
            [studVisit[1].country, studVisit[1].visits],
           [studVisit[2].country, studVisit[2].visits],
-           [studVisit[3].country, studVisit[3].visits]
-         // [studVisit[4].country, studVisit[3].visits],
+           [studVisit[3].country, studVisit[3].visits],
+              [studVisit[4].country, studVisit[4].visits],
+           [studVisit[5].country, studVisit[5].visits],
+          [studVisit[6].country, studVisit[6].visits],
+           [studVisit[7].country, studVisit[7].visits],
+              [studVisit[8].country, studVisit[8].visits],
+           [studVisit[9].country, studVisit[9].visits],
+          [studVisit[10].country, studVisit[10].visits],
+           [studVisit[11].country, studVisit[11].visits],
+              [studVisit[12].country, studVisit[12].visits],
+           [studVisit[13].country, studVisit[13].visits],
+          [studVisit[14].country, studVisit[14].visits],
+           [studVisit[15].country, studVisit[15].visits],
+              [studVisit[16].country, studVisit[16].visits],
+           [studVisit[17].country, studVisit[17].visits],
+          [studVisit[18].country, studVisit[18].visits],
+           [studVisit[19].country, studVisit[19].visits],
+              [studVisit[20].country, studVisit[20].visits],
+           [studVisit[21].country, studVisit[21].visits],
+          [studVisit[22].country, studVisit[22].visits],
+           [studVisit[23].country, studVisit[23].visits],
+              [studVisit[14].country, studVisit[24].visits],
+           [studVisit[25].country, studVisit[25].visits],
+          [studVisit[26].country, studVisit[26].visits],
+           [studVisit[27].country, studVisit[27].visits],
+              [studVisit[28].country, studVisit[28].visits],
+           [studVisit[29].country, studVisit[29].visits],
+          [studVisit[30].country, studVisit[29].visits],
+           [studVisit[31].country, studVisit[31].visits],
+            [studVisit[32].country, studVisit[32].visits]
+
+         
          
         ]);
 
         var options = {  
+           title: "Countries Visited",
           width: 800,
           height: 500,
           backgroundColor: 'red',
           backgroundColor: {
-            fill: 'blue'
+            fill: 'lightblue'
           }
         };
 

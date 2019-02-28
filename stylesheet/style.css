@@ -40,10 +40,10 @@ padding-top:10%;
 
 .row{
   margin:auto;
-  margin-top: 30%;
+  margin-top: 20%;
   padding-left: 10%;
   padding-top: 2%;
-  border:solid 1px orange;
+  
   height:100px;
   width:70%;
   
@@ -58,13 +58,29 @@ padding-top:10%;
 float: left;
   width: 25%;
   padding-left:5%;
+  color:white;
 
 }
 
-button{
+.hover-shadow{
   height: 50px;
   width:50px;
+  border-radius: 30%;
+  background-color:orange;
+   -webkit-transition: width 2s, height 2s, -webkit-transform 2s; /* Safari */
+  transition: width 2s, height 2s, transform 2s;
 }
+
+
+
+.hover-shadow:hover{
+ /* opacity: 0.3;  */
+  -webkit-transform: rotate(180deg); /* Safari */
+  transform: rotate(180deg);
+}
+
+
+
 
 .row_thumbNails {
     display: -ms-flexbox;
@@ -157,6 +173,24 @@ margin-left:40%;
   display: none;
 }
 
+/* Fading animation */
+.mySlides {
+  -webkit-animation-name: fade;
+  -webkit-animation-duration: 2.5s;
+  animation-name: fade;
+  animation-duration: 2.5s;
+}
+
+@-webkit-keyframes fade {
+  from {opacity: .4} 
+  to {opacity: 1}
+}
+
+@keyframes fade {
+  from {opacity: .4} 
+  to {opacity: 1}
+}
+
 .cursor {
   cursor: pointer;
 }
@@ -224,13 +258,6 @@ img {
   opacity: 1;
 }
 
-img.hover-shadow {
-  transition: 0.3s;
-}
-
-.hover-shadow:hover {
-  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-}
 
 
 @media only screen and (max-width: 600px) 
@@ -292,16 +319,16 @@ margin-left:2%;
 @media only screen and (min-width: 750px) and (max-width:800px) 
 {#title{
 text-align: center;
-margin-top:7%;
+
 margin-left:2%;
 
 }
 .row{
   margin:auto;
-  margin-top: 50%;
+ /* margin-top: 50%;*/
   padding-left: 10%;
   padding-top: 1.5%;
-  border:solid 1px orange;
+ 
   height:100px;
   width:70%;
   
@@ -318,10 +345,9 @@ margin-top:5%;
 }
 .row{
   margin:auto;
-  margin-top: 40%;
+ /* margin-top: 40%;*/
   padding-left: 10%;
   padding-top: 2%;
-  border:solid 1px orange;
   height:100px;
   width:70%;
   

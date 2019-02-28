@@ -22,7 +22,44 @@
         "studentName"   : "Student Four",
         "height"        : 170.18
 
-    }   
-    
+    },
+
+    {
+        "studentName"   : "Student Five",
+        "height"        : 161
+
+    },
+
+    {
+        "studentName"   : "Student Six",
+        "height"        : 168
+
+    },
+
+    {
+        "studentName"   : "Student Seven",
+        "height"        : 181
+
+    },
+
+    {
+        "studentName"   : "Student Eight",
+        "height"        : 171
+
+    },
+
+    {
+        "studentName"   : "Student Nine",
+        "height"        : 173
+
+    },
+
+    {
+        "studentName"   : "Student Ten",
+        "height"        : 153
+
+    }
+
+
 
 ]
