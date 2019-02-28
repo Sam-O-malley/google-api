@@ -1,0 +1,28 @@
+[
+
+    {
+        "studentName"   : "Student One",
+        "height"        : 185.42
+
+    },
+
+    {
+        "studentName"   : "Student Two",
+        "height"        : 177
+
+    },
+
+    {
+        "studentName"   : "Student Three",
+        "height"        : 173
+
+    },
+
+    {
+        "studentName"   : "Student Four",
+        "height"        : 170.18
+
+    }   
+    
+
+]

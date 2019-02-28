@@ -94,7 +94,7 @@ google.charts.load('current', {'packages':['corechart']});
 
     
         var data2 = google.visualization.arrayToDataTable([
-          ['month', 'date'],
+          ['date', 'month'],
           [ 12,  1],
           [ 9,   1],
           [ 12,   2],
@@ -130,21 +130,37 @@ google.charts.load('current', {'packages':['corechart']});
         chartLinear.draw(data2, options2);
 
 
-        
-      var data3 = google.visualization.arrayToDataTable([
-        ["Height", "Density", { role: "style" } ],
-        ["student one", 185.42, "#b87333"],
-        ["student two", 177, "silver"],
-        ["student three", 173, "gold"],
-        ["student four", 170.18, "color: #e5e4e2"],
-        ["student five", 161, "color: #e5e4e2"],
-        ["student six", 168, "gold"],
-        ["student sevene", 181, "color: #e5e4e2"],
-        ["student eight", 171, "color: #e5e4e2"],
-        ["student nine", 173, "color: #e5e4e2"],
-        ["student ten", 153, "color: #e5e4e2"]
 
-      ]);
+
+$.ajax({
+  url:"js/data.json",
+  type: "GET",
+  dataType : "json",
+  success : function (dataFromJSON){
+    console.log(dataFromJSON);
+
+
+        
+       var data3 = google.visualization.arrayToDataTable([
+        ["Student", "Height" ],
+        [dataFromJSON[0].studentName,dataFromJSON[0].height],
+         [dataFromJSON[1].studentName,dataFromJSON[1].height],
+          [dataFromJSON[2].studentName,dataFromJSON[2].height],
+           [dataFromJSON[3].studentName,dataFromJSON[3].height]
+
+
+      //   ["student one", 185.42, "#b87333"],
+      //   ["student two", 177, "silver"],
+      //   ["student three", 173, "gold"],
+      //   ["student four", 170.18, "color: #e5e4e2"],
+      //   ["student five", 161, "color: #e5e4e2"],
+      //   ["student six", 168, "gold"],
+      //   ["student sevene", 181, "color: #e5e4e2"],
+      //   ["student eight", 171, "color: #e5e4e2"],
+      //   ["student nine", 173, "color: #e5e4e2"],
+      //   ["student ten", 153, "color: #e5e4e2"]
+
+       ]);
 
       var view = new google.visualization.DataView(data3);
       view.setColumns([0, 1,
@@ -159,14 +175,19 @@ google.charts.load('current', {'packages':['corechart']});
         width: 800,
         height: 500,
         bar: {groupWidth: "95%"},
-            // backgroundColor: 'transparent',
+    
         legend: { position: "none" },
       };
       
       var chart = new google.visualization.BarChart(document.getElementById("barchart_height"));
       
       chart.draw(data3, options3);
-  }
+
+        }
+      });
+  
+
+
 
 var options = {
   hAxis: {
@@ -203,6 +224,40 @@ var options = {
          
     };
 
+var studVisit= [
+{
+
+"country" : "Germany",
+"visits"  : 5
+
+},
+
+{
+
+"country" : "United States",
+"visits"  : 2
+
+},
+
+{
+
+"country" : "Brazil",
+"visits"  : 3
+
+},
+
+{
+
+"country" : "France",
+"visits"  : 3
+
+}
+
+]
+
+
+
+
    google.charts.load('current', {
         'packages':['geochart'],
         // Note: you will need to get a mapsApiKey for your project.
@@ -214,12 +269,12 @@ var options = {
       function drawRegionsMap() {
         var data = google.visualization.arrayToDataTable([
           ['Country', 'vists'],
-          ['Germany', 200],
-          ['United States', 300],
-          ['Brazil', 400],
-          ['Canada', 500],
-          ['France', 600],
-          ['RU', 700]
+          [studVisit[0].country, studVisit[0].visits],
+           [studVisit[1].country, studVisit[1].visits],
+          [studVisit[2].country, studVisit[2].visits],
+           [studVisit[3].country, studVisit[3].visits]
+         // [studVisit[4].country, studVisit[3].visits],
+         
         ]);
 
         var options = {  
@@ -235,3 +290,4 @@ var options = {
 
         chart.draw(data, options);
       }
+}
